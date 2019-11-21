@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Flying : MonoBehaviour
+public class MovementBasic : MonoBehaviour //Flying
 {
 
     // Use this for initialization
