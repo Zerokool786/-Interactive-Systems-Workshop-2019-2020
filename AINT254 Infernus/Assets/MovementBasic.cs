@@ -14,10 +14,10 @@ public class MovementBasic : MonoBehaviour //Flying
     void Update()
     {
         transform.position += transform.forward * Time.deltaTime * 10.0f;
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Roll"))
             transform.position += transform.forward * Time.deltaTime * 40.0f;
 
-        transform.Rotate(Input.GetAxis("Vertical"), 0.0f, -Input.GetAxis("Horizontal"));
+        transform.Rotate(Input.GetAxis("Pitch"), 0.0f, -Input.GetAxis("Yaw"));
 
         float terrainHeightWhereWeAre = Terrain.activeTerrain.SampleHeight(transform.position);
 
