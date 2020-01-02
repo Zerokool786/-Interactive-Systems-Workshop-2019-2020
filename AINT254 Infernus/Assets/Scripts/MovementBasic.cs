@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class MovementBasic : MonoBehaviour //Flying
@@ -7,7 +7,7 @@ public class MovementBasic : MonoBehaviour //Flying
     // Use this for initialization
     void Start()
     {
-        Debug.Log("Fly script added to: " + gameObject.name);
+        Debug.Log("Movement Basic script added to: " + gameObject.name);
     }
 
     // Update is called once per frame

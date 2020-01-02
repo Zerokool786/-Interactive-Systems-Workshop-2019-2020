@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,12 +12,12 @@ public class Fly : MonoBehaviour
 
     public float RotationSpeed = 100.0f;
 
-    private Rigidbody _rigidBody;
+    private Rigidbody Eagle;
 
     // Use this for initialization
     void Start()
     {
-        _rigidBody = GetComponent<Rigidbody>();
+        Eagle = GetComponent<Rigidbody>();
 
     }
 
@@ -40,9 +40,9 @@ public class Fly : MonoBehaviour
         pitch = Input.GetAxis("Pitch") * (Time.fixedDeltaTime * RotationSpeed);
         yaw = Input.GetAxis("Yaw") * (Time.fixedDeltaTime * RotationSpeed);
         AddRot.eulerAngles = new Vector3(-pitch, yaw, -roll);
-        _rigidBody.rotation *= AddRot;
+        Eagle.rotation *= AddRot;
         Vector3 AddPos = Vector3.forward;
-        AddPos = _rigidBody.rotation * AddPos;
-        _rigidBody.velocity = AddPos * (Time.fixedDeltaTime * AmbientSpeed);
+        AddPos = Eagle.rotation * AddPos;
+        Eagle.velocity = AddPos * (Time.fixedDeltaTime * AmbientSpeed);
     }
 }
