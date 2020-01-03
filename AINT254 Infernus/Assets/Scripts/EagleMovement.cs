@@ -16,7 +16,7 @@ public class EagleMovement : MonoBehaviour
     {
         HoverUpDown();
 
-        Eagle.AddRelativeForce(Vector3.up * HoverUp);
+        Eagle.AddForce(Vector3.up * HoverUp); 
     }
     void HoverUpDown() //WASD Movement
     {
@@ -26,11 +26,11 @@ public class EagleMovement : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.K))
         {
-            HoverUp = -200;
+            HoverUp = -200; //downforce like a dive from a eagle
         }
         else if (!Input.GetKey(KeyCode.I) && !Input.GetKey(KeyCode.K))   //// if not clicking then hoverup by 98.1 default value for gravity inside unity
         {
-            HoverUp = 98.1f; //gravity * mass
+            HoverUp = 98.1f; //gravity * mass 
         }
     }
 }
