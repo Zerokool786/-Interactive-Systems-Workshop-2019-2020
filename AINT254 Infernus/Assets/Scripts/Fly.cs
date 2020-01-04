@@ -12,7 +12,7 @@ public class Fly : MonoBehaviour
 
     public float RotationSpeed = 100.0f;
 
-    private Rigidbody Eagle;
+    private Rigidbody Eagle; //little bug private keeps it from not interfering with Eagle Movement 
 
     // Use this for initialization
     void Start()
@@ -26,12 +26,12 @@ public class Fly : MonoBehaviour
 
     void FixedUpdate()
     {
-        UpdateFunction();
+       UpdateFunction();
+        
     }
 
     void UpdateFunction()
     {
-
         Quaternion AddRot = Quaternion.identity;
         float roll = 0;
         float pitch = 0;
@@ -44,5 +44,6 @@ public class Fly : MonoBehaviour
         Vector3 AddPos = Vector3.forward;
         AddPos = Eagle.rotation * AddPos;
         Eagle.velocity = AddPos * (Time.fixedDeltaTime * AmbientSpeed);
+
     }
 }
