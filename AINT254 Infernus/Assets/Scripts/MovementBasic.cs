@@ -13,7 +13,6 @@ public class MovementBasic : MonoBehaviour //Flying
     }
 
     // Update is called once per frame
-    void Update()
     private void FixedUpdate()
     {
         transform.position += transform.forward * Time.deltaTime * 40.0f; //10.0f
